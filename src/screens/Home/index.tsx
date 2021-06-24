@@ -24,7 +24,7 @@ export function Home() {
       },
       category: '1',
       date: '22/06 às 20:40h',
-      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'      
     },
     {
       id: '2',
@@ -36,14 +36,14 @@ export function Home() {
       },
       category: '1',
       date: '22/06 às 20:40h',
-      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'      
     },
-
+    
   ]
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
-  }
+  }  
 
   return (
     <View>
@@ -51,23 +51,23 @@ export function Home() {
         <Profile />
         <ButtonAdd />
       </View>
-
-      <CategorySelect
+    
+      <CategorySelect 
         categorySelected={category}
         setCategory={handleCategorySelect}
       />
 
       <View style={styles.content}>
-        <ListHeader
+        <ListHeader 
           title="Partidas agendadas"
           subtitle="Total 6"
         />
 
-        <FlatList
-          data={appointments}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => (
-            <Appointment data={item} />
+        <FlatList 
+            data={appointments}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => (
+            <Appointment data={item} />            
           )}
           ItemSeparatorComponent={() => <ListDivider />}
           style={styles.matches}
@@ -75,5 +75,5 @@ export function Home() {
         />
       </View>
     </View>
-  );
+  );  
 }
