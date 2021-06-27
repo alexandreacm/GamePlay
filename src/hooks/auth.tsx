@@ -55,13 +55,13 @@ function AuthProvider({ children }: AuthProviderProps) {
 
       const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
 
-      const { type, params } = await AuthSession
+      const response = await AuthSession
         .startAsync({ authUrl }) as AuthorizationResponse;
 
-      console.log(`Log: ${params}`);
+      console.log(`Log: ${response}`);
 
-      if (type === "success") {
-        api.defaults.headers.authorization = `Bearer ${params.access_token}`;
+      if (response.type === "success") {
+        api.defaults.headers.authorization = `Bearer ${response.params.access_token}`;
 
         const userInfo = await api.get('/users/@me');
 
@@ -71,7 +71,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         setUser({
           ...userInfo.data,
           firstName,
-          token: params.access_token
+          token: response.params.access_token
         });
         setLoading(false);
       } else {
