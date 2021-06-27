@@ -11,6 +11,7 @@ import {
 
 import { theme } from '../../global/styles/theme';
 import { styles } from './styles';
+import BannerImg from '../../assets/banner.png';
 
 import { ListDivider } from '../../components/ListDivider';
 import { Background } from '../../components/Background';
@@ -18,8 +19,6 @@ import { ListHeader } from '../../components/ListHeader';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { Member } from '../../components/Member';
 import { Header } from '../../components/Header';
-
-import BannerImg from '../../assets/banner.png';
 
 export function AppointmentDetails(){
   const members = [
@@ -34,12 +33,6 @@ export function AppointmentDetails(){
       username: 'Rodrigo',
       avatar_url: 'https://github.com/rodrigorgtic.png',
       status: 'offline'
-    },
-    {
-      id: '3',
-      username: 'Alexandre',
-      avatar_url: 'https://github.com/alexandreacm.png',
-      status: 'online'
     }
   ]
   return (
