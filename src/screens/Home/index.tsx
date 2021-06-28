@@ -42,7 +42,7 @@ export function Home() {
     if(category){
       setAppointments(storage.filter(item => item.category === category));
     }else{
-      setAppointments(storage)
+      setAppointments(storage);
     }
     
     setLoading(false);
