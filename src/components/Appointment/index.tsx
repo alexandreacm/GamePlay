@@ -37,17 +37,17 @@ export function Appointment({ data, ...rest }: Props) {
           style={styles.guildIconContainer}
           colors={[secondary50, secondary70]}
         >
-          <GuildIcon />
+          <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
         </LinearGradient>
 
         <View style={styles.content}>
           <View style={styles.header}>
             <Text style={styles.title}>
-              { data.guild.name }
+              { data?.guild?.name }
             </Text>
 
             <Text style={styles.category}>
-              { category.title }
+              { category?.title }
             </Text>
           </View>
 
@@ -56,7 +56,7 @@ export function Appointment({ data, ...rest }: Props) {
               <CalendarSvg />
 
               <Text style={styles.date}>
-                { data.date }                
+                { data?.date }                
               </Text>
             </View>
 
