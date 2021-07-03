@@ -79,5 +79,5 @@ This project is under the MIT license. See the file [LICENSE](LICENSE.md) for mo
 <br />
 
 <div align="center">
-  <small>Development for Alexandre carvalho marques - 2021/Jun</small>
+  <small>Development for Alexandre carvalho Marques - 2021/Jun</small>
 </div>
